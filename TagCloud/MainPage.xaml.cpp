@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "CanvasRenderer.h"
 
 using namespace TagCloud;
 
@@ -27,5 +28,6 @@ MainPage::MainPage()
 
 void TagCloud::MainPage::Canvas_Draw(Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender, Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args)
 {
-	args->DrawingSession->DrawText("Tag Cloud!", 100, 100, Colors::Black);
+	CanvasRenderer renderer(args->DrawingSession);
+	renderer.Render();
 }
