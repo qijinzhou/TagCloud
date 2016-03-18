@@ -156,7 +156,10 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="packages.config" />
+    <None Include="..\README.md" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="TagCloud_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

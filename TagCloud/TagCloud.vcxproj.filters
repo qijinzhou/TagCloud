@@ -51,6 +51,7 @@
   <ItemGroup>
     <None Include="TagCloud_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
