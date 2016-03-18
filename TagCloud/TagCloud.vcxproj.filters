@@ -16,6 +16,7 @@
     <ClCompile Include="App.xaml.cpp" />
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="TagCloudLayout.cpp" />
     <ClCompile Include="CanvasRenderer.cpp" />
     <ClCompile Include="SampleTexts.cpp" />
   </ItemGroup>
@@ -23,6 +24,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="TagCloudLayout.h" />
     <ClInclude Include="CanvasRenderer.h" />
     <ClInclude Include="SampleTexts.h" />
   </ItemGroup>
