@@ -145,6 +145,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="SampleTexts.h" />
+    <ClInclude Include="Tag.h" />
     <ClInclude Include="TagCloudLayout.h" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SampleTexts.cpp" />
+    <ClCompile Include="Tag.cpp" />
     <ClCompile Include="TagCloudLayout.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

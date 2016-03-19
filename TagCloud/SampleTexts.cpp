@@ -1,15 +1,10 @@
 ﻿#include "pch.h"
 #include "SampleTexts.h"
+#include "Tag.h"
 
-struct WordItem
+std::vector<Tag> LoremIpsum1000()
 {
-	std::wstring word;
-	uint32_t count;
-};
-
-std::vector<WordItem> LoremIpsum1000()
-{
-	std::vector<WordItem> words =
+	std::vector<Tag> tags =
 	{
 		{L"et",				23},
 		{L"a",				22},
@@ -187,12 +182,12 @@ std::vector<WordItem> LoremIpsum1000()
 		{L"taciti",			1},
 		{L"torquent",		1},
 	};
-	return words;
+	return tags;
 }
 
-std::vector<WordItem> LoremIpsum4000()
+std::vector<Tag> LoremIpsum4000()
 {
-	std::vector<WordItem> words =
+	std::vector<Tag> tags =
 	{
 		{L"in",				78},
 		{L"sed",			78},
@@ -375,12 +370,12 @@ std::vector<WordItem> LoremIpsum4000()
 		{L"facilisi",		1},
 		{L"potenti",		1},
 	};
-	return words;
+	return tags;
 }
 
-std::vector<WordItem> HeartSutra()
+std::vector<Tag> HeartSutra()
 {
-	std::vector<WordItem> words =
+	std::vector<Tag> tags =
 	{
 		{L"無",				21},
 		{L"不",				9},
@@ -499,5 +494,5 @@ std::vector<WordItem> HeartSutra()
 		{L"香",				1},
 		{L"鼻",				1},
 	};
-	return words;
+	return tags;
 }

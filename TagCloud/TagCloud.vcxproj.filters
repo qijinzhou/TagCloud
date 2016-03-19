@@ -19,6 +19,7 @@
     <ClCompile Include="TagCloudLayout.cpp" />
     <ClCompile Include="CanvasRenderer.cpp" />
     <ClCompile Include="SampleTexts.cpp" />
+    <ClCompile Include="Tag.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -27,6 +28,7 @@
     <ClInclude Include="TagCloudLayout.h" />
     <ClInclude Include="CanvasRenderer.h" />
     <ClInclude Include="SampleTexts.h" />
+    <ClInclude Include="Tag.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
