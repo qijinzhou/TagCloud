@@ -21,12 +21,14 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 
+using namespace Microsoft::Graphics::Canvas::UI::Xaml;
+
 MainPage::MainPage()
 {
 	InitializeComponent();
 }
 
-void TagCloud::MainPage::Canvas_Draw(Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender, Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args)
+void TagCloud::MainPage::Canvas_Draw(CanvasControl^ sender, CanvasDrawEventArgs^ args)
 {
 	CanvasRenderer renderer(args->DrawingSession);
 	renderer.Render();
