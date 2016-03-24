@@ -35,7 +35,7 @@ void TagCloud::MainPage::Canvas_Draw(CanvasControl^ sender, CanvasDrawEventArgs^
 {
 	TagCollection collection = SampleTexts::GetSample1();
 	TagCloudLayout layout(sender);
-	layout.Layout(collection);
+	layout.Layout(collection, sender->Size);
 
 	CanvasRenderer renderer(args->DrawingSession);
 	layout.Render(renderer);

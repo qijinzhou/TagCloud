@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CanvasRenderer.h"
 
+using namespace Windows::Foundation;
 using namespace Windows::UI;
 
 using namespace Microsoft::Graphics::Canvas;
@@ -11,7 +12,7 @@ CanvasRenderer::CanvasRenderer(CanvasDrawingSession^ session) :
 {
 }
 
-void CanvasRenderer::Render(CanvasTextLayout^ layout, float x, float y)
+void CanvasRenderer::Render(CanvasTextLayout^ layout, const Point& point)
 {
-	m_session->DrawTextLayout(layout, x, y, Colors::Black);
+	m_session->DrawTextLayout(layout, point.X, point.Y, Colors::Black);
 }
