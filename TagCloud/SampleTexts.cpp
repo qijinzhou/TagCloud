@@ -496,3 +496,24 @@ std::vector<Tag> HeartSutra()
 	};
 	return tags;
 }
+
+TagCollection SampleTexts::GetSample1()
+{
+	TagCollection collection;
+	collection.Set(LoremIpsum1000());
+	return collection;
+}
+
+TagCollection SampleTexts::GetSample2()
+{
+	TagCollection collection;
+	collection.Set(LoremIpsum4000());
+	return collection;
+}
+
+TagCollection SampleTexts::GetSample3()
+{
+	TagCollection collection;
+	collection.Set(HeartSutra());
+	return collection;
+}
