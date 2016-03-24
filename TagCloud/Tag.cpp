@@ -9,9 +9,14 @@ uint32_t TagCollection::GetTotalCount() const
 	return count;
 }
 
-void TagCollection::AddTag(Tag&& tag)
+void TagCollection::Add(Tag&& tag)
 {
 	m_tags.push_back(std::move(tag));
+}
+
+void TagCollection::Set(std::vector<Tag>&& tags)
+{
+	m_tags = std::move(tags);
 }
 
 void TagCollection::SortAscending()
