@@ -6,6 +6,9 @@
 #include "pch.h"
 #include "MainPage.xaml.h"
 #include "CanvasRenderer.h"
+#include "SampleTexts.h"
+#include "Tag.h"
+#include "TagCloudLayout.h"
 
 using namespace TagCloud;
 
@@ -30,6 +33,10 @@ MainPage::MainPage()
 
 void TagCloud::MainPage::Canvas_Draw(CanvasControl^ sender, CanvasDrawEventArgs^ args)
 {
+	TagCollection collection = SampleTexts::GetSample1();
+	TagCloudLayout layout(sender);
+	layout.Layout(collection);
+
 	CanvasRenderer renderer(args->DrawingSession);
-	renderer.Render();
+	layout.Render(renderer);
 }

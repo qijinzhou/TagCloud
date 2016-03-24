@@ -4,13 +4,14 @@
 using namespace Windows::UI;
 
 using namespace Microsoft::Graphics::Canvas;
+using namespace Microsoft::Graphics::Canvas::Text;
 
 CanvasRenderer::CanvasRenderer(CanvasDrawingSession^ session) :
 	m_session(session)
 {
 }
 
-void CanvasRenderer::Render()
+void CanvasRenderer::Render(CanvasTextLayout^ layout, float x, float y)
 {
-	m_session->FillCircle(200, 200, 50, Colors::Red);
+	m_session->DrawTextLayout(layout, x, y, Colors::Black);
 }
