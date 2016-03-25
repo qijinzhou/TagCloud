@@ -8,4 +8,6 @@
 #include <collection.h>
 #include <ppltasks.h>
 
+#include <random>
+
 #include "App.xaml.h"

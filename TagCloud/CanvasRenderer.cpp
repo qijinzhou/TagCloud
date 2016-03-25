@@ -14,7 +14,8 @@ CanvasRenderer::CanvasRenderer(CanvasDrawingSession^ session) :
 
 void CanvasRenderer::Render(CanvasTextLayout^ layout, const Point& point)
 {
-	m_session->DrawTextLayout(layout, point.X, point.Y, Colors::Black);
+	auto color = ColorHelper::FromArgb(255, static_cast<uint8_t>(m_colorDist(m_random)), static_cast<uint8_t>(m_colorDist(m_random)), static_cast<uint8_t>(m_colorDist(m_random)));
+	m_session->DrawTextLayout(layout, point.X, point.Y, color);
 
 	// Debug
 	auto drawBounds = layout->DrawBounds;

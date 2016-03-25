@@ -9,4 +9,6 @@ public:
 
 private:
 	Microsoft::Graphics::Canvas::CanvasDrawingSession^ m_session;
+	std::mt19937 m_random{ 12345 };
+	std::uniform_int_distribution<uint16_t> m_colorDist{ 0, 255 };
 };
