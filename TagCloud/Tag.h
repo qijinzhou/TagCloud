@@ -10,6 +10,7 @@ class TagCollection
 {
 public:
 	uint32_t GetTotalCount() const;
+	uint32_t GetMaxCount() const;
 
 	void Add(Tag&& tag);
 	void Set(std::vector<Tag>&& tags);

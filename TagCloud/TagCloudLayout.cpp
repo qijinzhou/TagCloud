@@ -27,13 +27,14 @@ TagCloudLayout::TagCloudLayout(ICanvasResourceCreator^ resourceCreator) :
 
 void TagCloudLayout::Layout(const TagCollection& tags, const Size& canvasSize)
 {
-	tags.Enumerate([this](const auto& tag)
+	uint32_t maxCount = tags.GetMaxCount();
+	tags.Enumerate([this, maxCount](const auto& tag)
 	{
 		m_layouts.emplace_back();
 		auto& layout = m_layouts.back();
 
 		layout.format = ref new CanvasTextFormat();
-		layout.format->FontSize = 72.0f;
+		layout.format->FontSize = tag.count * 200.0f / maxCount;
 
 		layout.layout = ref new CanvasTextLayout(m_resourceCreator, ref new String(tag.tag.c_str()), layout.format, 1000.0f, 100.f);
 	});
@@ -41,7 +42,7 @@ void TagCloudLayout::Layout(const TagCollection& tags, const Size& canvasSize)
 	std::vector<Rect> layoutBounds;
 	layoutBounds.reserve(m_layouts.size());
 
-	const float separation = 5;
+	const float separation = 10;
 	const float maxRadius = std::min(canvasSize.Width, canvasSize.Height);
 	const float maxT = std::ceil(maxRadius / separation) * PI;
 	const float arcToChordFactor = 1.5f;

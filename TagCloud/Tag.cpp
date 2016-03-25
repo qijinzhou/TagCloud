@@ -9,6 +9,14 @@ uint32_t TagCollection::GetTotalCount() const
 	return count;
 }
 
+uint32_t TagCollection::GetMaxCount() const
+{
+	uint32_t max = 0;
+	for (const auto& tag : m_tags)
+		max = std::max(max, tag.count);
+	return max;
+}
+
 void TagCollection::Add(Tag&& tag)
 {
 	m_tags.push_back(std::move(tag));
