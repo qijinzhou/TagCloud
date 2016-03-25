@@ -73,10 +73,25 @@ void TagCloudLayout::Layout(const TagCollection& tags, const Size& canvasSize)
 		layoutBounds.emplace_back(bounds);
 	}
 
+	Rect totalBounds = {};
+
 	for (auto& layout : m_layouts)
 	{
-		layout.point.X += canvasSize.Width / 2 - layout.layout->DrawBounds.X;
-		layout.point.Y += canvasSize.Height / 2 - layout.layout->DrawBounds.Y;
+		layout.point.X -= layout.layout->DrawBounds.X;
+		layout.point.Y -= layout.layout->DrawBounds.Y;
+
+		totalBounds.X = std::min(layout.point.X, totalBounds.X);
+		totalBounds.Y = std::min(layout.point.Y, totalBounds.Y);
+		totalBounds.Width = std::max(layout.point.X + layout.layout->DrawBounds.Width, totalBounds.Width);
+		totalBounds.Height = std::max(layout.point.Y + layout.layout->DrawBounds.Height, totalBounds.Height);
+	}
+	totalBounds.Width -= totalBounds.X;
+	totalBounds.Height -= totalBounds.Y;
+
+	for (auto& layout : m_layouts)
+	{
+		layout.point.X += canvasSize.Width / 2 - totalBounds.Width / 2 - totalBounds.X;
+		layout.point.Y += canvasSize.Height / 2 - totalBounds.Height / 2 - totalBounds.Y;
 	}
 }
 
