@@ -55,7 +55,7 @@ void TagCloudLayout::Layout(const TagCollection& tags, const Size& canvasSize)
 		Point point;
 		for (float t = 0; t < maxT; t += arcToChordFactor * separation / (spiralScaling * t + separation))
 		{
-			point = { canvasSize.Width / 2 + spiralScaling * t * std::cos(t), canvasSize.Height / 2 + spiralScaling * t * std::sin(t) };
+			point = { spiralScaling * t * std::cos(t), spiralScaling * t * std::sin(t) };
 			bool goodFit = true;
 			for (auto& layoutBound : layoutBounds)
 			{
@@ -71,6 +71,12 @@ void TagCloudLayout::Layout(const TagCollection& tags, const Size& canvasSize)
 		bounds.Y = point.Y;
 		layout.point = point;
 		layoutBounds.emplace_back(bounds);
+	}
+
+	for (auto& layout : m_layouts)
+	{
+		layout.point.X += canvasSize.Width / 2 - layout.layout->DrawBounds.X;
+		layout.point.Y += canvasSize.Height / 2 - layout.layout->DrawBounds.Y;
 	}
 }
 
