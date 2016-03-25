@@ -15,4 +15,8 @@ CanvasRenderer::CanvasRenderer(CanvasDrawingSession^ session) :
 void CanvasRenderer::Render(CanvasTextLayout^ layout, const Point& point)
 {
 	m_session->DrawTextLayout(layout, point.X, point.Y, Colors::Black);
+
+	// Debug
+	auto drawBounds = layout->DrawBounds;
+	m_session->DrawRectangle(point.X + drawBounds.X, point.Y + drawBounds.Y, drawBounds.Width, drawBounds.Height, Colors::Red);
 }
